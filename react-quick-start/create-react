@@ -1,3 +1,5 @@
+#!/bin/bash
+
 npx create-react-app "$1"
 
 cd "$1"
@@ -14,3 +16,5 @@ cat <<EOT >> jsconfig.json
     }
 }
 EOT
+
+git init
