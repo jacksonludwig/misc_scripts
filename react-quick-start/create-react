@@ -6,14 +6,14 @@ cd "$1"
 
 cat <<EOT >> jsconfig.json
 {
-    "compilerOptions": {
-        "module": "commonjs",
-        "target": "es2016",
-        "jsx": "preserve",
-        "allowJs": true,
-        "allowSyntheticDefaultImports": true,
-        "allowNonTsExtensions": true
-    }
+  "compilerOptions": {
+    "target": "es2017",
+    "allowSyntheticDefaultImports": true,
+    "noEmit": true,
+    "checkJs": true,
+    "jsx": "react",
+    "lib": [ "dom", "es2017" ]
+  }
 }
 EOT
 
