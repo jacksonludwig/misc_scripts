@@ -1,0 +1,39 @@
+#!/bin/bash
+
+cd "$1"
+
+mkdir css
+mkdir js
+
+touch css/style.css
+touch js/index.js
+
+cat <<EOT >> index.html
+<!doctype html>
+<html>
+  <head>
+    <title></title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="js/index.js"></script>
+  </head>
+  <body>
+
+  </body>
+</html>
+EOT
+
+cat <<EOT >> jsconfig.json
+{
+  "compilerOptions": {
+    "target": "es2017",
+    "allowSyntheticDefaultImports": true,
+    "noEmit": true,
+    "checkJs": true,
+    "jsx": "react",
+    "lib": [ "dom", "es2017" ]
+  }
+}
+EOT
+
+git init
